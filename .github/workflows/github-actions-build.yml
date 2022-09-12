@@ -23,8 +23,8 @@ jobs:
 
     - name: DockerBuild
       run: |
-        $tag=(date +%Y%m%d%H%M)
-        $image="${{ secrets.DOCKERHUB_USERNAME }}/pgbouncer-ubuntu2204:$tag"
+        tag=$(date +%Y%m%d%H%M)
+        image="${{ secrets.DOCKERHUB_USERNAME }}/pgbouncer-ubuntu2204:$tag"
         cd 1/debian-11/
         ls
         docker build -t $image .
