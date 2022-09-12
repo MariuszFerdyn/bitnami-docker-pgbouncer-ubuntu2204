@@ -13,7 +13,7 @@ RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "postgresql-clien
 RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "ini-file" "1.4.3-151" --checksum 3f23f4fff5bd0ebead5b1a59c450e7b9806198864ff9c765439df14bfb9e1cf4
 RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "gosu" "1.14.0-152" --checksum 0c751c7e2ec0bc900a19dbec0306d6294fe744ddfb0fa64197ba1a36040092f0
 RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "pgbouncer" "1.17.0-153" --checksum 1a171597249a3631730eed31ce497f3f61e440126cb1c01efac4eff60e41ed0f
-RUN curl -s http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl-dev_1.1.1f-1ubuntu2.16_amd64.deb -o /tmp/libssl-dev_1.1.1f-1ubuntu2.16_amd64.deb && dpkg -i /tmp/libssl-dev_1.1.1f-1ubuntu2.16_amd64.deb
+RUN curl -s http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb -o /tmp/libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb && dpkg -i /tmp/libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb
 RUN apt-get update && apt-get upgrade -y && \
     rm -r /var/lib/apt/lists /var/cache/apt/archives
 RUN chmod g+rwX /opt/bitnami
