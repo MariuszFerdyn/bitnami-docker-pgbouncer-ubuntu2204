@@ -27,6 +27,6 @@ jobs:
         #$image="${{ secrets.DOCKERHUB_USERNAME }}/mazeballweb:$tag"
         cd 1/debian-11/
         ls
-        docker build -t .
+        docker build .
         docker images
         #docker push $image
