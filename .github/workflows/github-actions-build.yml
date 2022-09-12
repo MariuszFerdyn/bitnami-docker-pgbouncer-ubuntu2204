@@ -25,7 +25,7 @@ jobs:
       run: |
         #$tag=(get-date -format yyMMddhhmm)
         #$image="${{ secrets.DOCKERHUB_USERNAME }}/mazeballweb:$tag"
-        cd $env:RUNNER_WORKSPACE/1/debian-11/
+        cd 1/debian-11/
         ls
         docker build -t .
         docker images
