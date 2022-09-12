@@ -25,7 +25,7 @@ jobs:
       run: |
         tag=$(date +%Y%m%d%H%M)
         image="${{ secrets.DOCKERHUB_USERNAME }}/pgbouncer-ubuntu2204:$tag"
-        cd 1/debian-11/
+        cd 1/ubuntu-2204/
         ls
         docker build -t $image .
         docker images
