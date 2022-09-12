@@ -1,4 +1,4 @@
-name: Mazeball Container Build
+name: PGBOUNCER Ubuntu 2204 Container Build
 
 on:
   push:
@@ -15,18 +15,18 @@ jobs:
       run: |
         ls
 
-    #- name: Login to Docker Hub
-    #  uses: docker/login-action@v2
-    #  with:
-    #    username: ${{ secrets.DOCKERHUB_USERNAME }}
-    #    password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: DockerBuild
       run: |
-        #$tag=(get-date -format yyMMddhhmm)
-        #$image="${{ secrets.DOCKERHUB_USERNAME }}/mazeballweb:$tag"
+        $tag=(date +%Y%m%d%H%M)
+        $image="${{ secrets.DOCKERHUB_USERNAME }}/pgbouncer-ubuntu2204:$tag"
         cd 1/debian-11/
         ls
-        docker build .
+        docker build -t $image .
         docker images
-        #docker push $image
+        docker push $image
